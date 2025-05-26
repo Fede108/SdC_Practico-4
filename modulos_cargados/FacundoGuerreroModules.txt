@@ -1,0 +1,125 @@
+Module                  Size  Used by
+nf_conntrack_netlink    57344  0
+xt_nat                 12288  5
+xt_tcpudp              16384  0
+veth                   45056  0
+xt_conntrack           12288  2
+xt_MASQUERADE          16384  2
+bridge                421888  0
+stp                    12288  1 bridge
+llc                    16384  2 bridge,stp
+xt_set                 20480  0
+ip_set                 61440  1 xt_set
+nft_chain_nat          12288  7
+nf_nat                 61440  3 xt_nat,nft_chain_nat,xt_MASQUERADE
+nf_conntrack          196608  5 xt_conntrack,nf_nat,xt_nat,nf_conntrack_netlink,xt_MASQUERADE
+nf_defrag_ipv6         24576  1 nf_conntrack
+nf_defrag_ipv4         12288  1 nf_conntrack
+xt_addrtype            12288  4
+nft_compat             20480  13
+nf_tables             376832  177 nft_compat,nft_chain_nat
+xfrm_user              61440  1
+xfrm_algo              16384  1 xfrm_user
+snd_seq_dummy          12288  0
+snd_hrtimer            12288  1
+overlay               212992  1
+qrtr                   53248  2
+binfmt_misc            24576  1
+amdgpu              17133568  23
+snd_hda_codec_realtek   200704  1
+kvm                  1409024  0
+snd_hda_codec_generic   122880  1 snd_hda_codec_realtek
+snd_hda_codec_hdmi     94208  2
+irqbypass              12288  1 kvm
+snd_hda_intel          61440  3
+snd_intel_dspcfg       36864  1 snd_hda_intel
+snd_intel_sdw_acpi     16384  1 snd_intel_dspcfg
+nls_iso8859_1          12288  1
+snd_hda_codec         204800  4 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec_realtek
+snd_hda_core          139264  5 snd_hda_codec_generic,snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek
+snd_hwdep              20480  1 snd_hda_codec
+amdxcp                 12288  1 amdgpu
+drm_exec               12288  1 amdgpu
+snd_pcm               192512  4 snd_hda_codec_hdmi,snd_hda_intel,snd_hda_codec,snd_hda_core
+intel_rapl_msr         20480  0
+gpu_sched              61440  1 amdgpu
+snd_seq_midi           24576  0
+intel_rapl_common      40960  1 intel_rapl_msr
+drm_buddy              20480  1 amdgpu
+snd_seq_midi_event     16384  1 snd_seq_midi
+drm_suballoc_helper    16384  1 amdgpu
+snd_rawmidi            57344  1 snd_seq_midi
+drm_ttm_helper         12288  1 amdgpu
+ttm                   110592  2 amdgpu,drm_ttm_helper
+snd_seq               118784  9 snd_seq_midi,snd_seq_midi_event,snd_seq_dummy
+drm_display_helper    237568  1 amdgpu
+snd_seq_device         16384  3 snd_seq,snd_seq_midi,snd_rawmidi
+cec                    94208  1 drm_display_helper
+snd_timer              49152  3 snd_seq,snd_hrtimer,snd_pcm
+edac_mce_amd           28672  0
+snd                   143360  19 snd_hda_codec_generic,snd_seq,snd_seq_device,snd_hda_codec_hdmi,snd_hwdep,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek,snd_timer,snd_pcm,snd_rawmidi
+rc_core                73728  1 cec
+rapl                   20480  0
+wmi_bmof               12288  0
+gigabyte_wmi           12288  0
+ccp                   143360  0
+i2c_piix4              32768  0
+k10temp                16384  0
+i2c_algo_bit           16384  1 amdgpu
+soundcore              16384  1 snd
+input_leds             12288  0
+joydev                 32768  0
+gpio_amdpt             16384  0
+mac_hid                12288  0
+sch_fq_codel           24576  2
+msr                    12288  0
+parport_pc             53248  0
+ppdev                  24576  0
+lp                     28672  0
+parport                73728  3 parport_pc,lp,ppdev
+efi_pstore             12288  0
+nfnetlink              20480  6 nft_compat,nf_conntrack_netlink,nf_tables,ip_set
+dmi_sysfs              24576  0
+ip_tables              32768  0
+x_tables               65536  8 xt_conntrack,nft_compat,xt_tcpudp,xt_addrtype,xt_nat,xt_set,ip_tables,xt_MASQUERADE
+autofs4                57344  2
+btrfs                2043904  0
+blake2b_generic        24576  0
+raid10                 73728  0
+raid456               196608  0
+async_raid6_recov      20480  1 raid456
+async_memcpy           16384  2 raid456,async_raid6_recov
+async_pq               20480  2 raid456,async_raid6_recov
+async_xor              16384  3 async_pq,raid456,async_raid6_recov
+async_tx               16384  5 async_pq,async_memcpy,async_xor,raid456,async_raid6_recov
+xor                    20480  2 async_xor,btrfs
+raid6_pq              126976  4 async_pq,btrfs,raid456,async_raid6_recov
+libcrc32c              12288  5 nf_conntrack,nf_nat,btrfs,nf_tables,raid456
+raid1                  57344  0
+raid0                  24576  0
+dm_mirror              24576  0
+dm_region_hash         24576  1 dm_mirror
+dm_log                 20480  2 dm_region_hash,dm_mirror
+hid_logitech_hidpp     65536  0
+hid_logitech_dj        36864  0
+hid_generic            12288  0
+crct10dif_pclmul       12288  1
+crc32_pclmul           12288  0
+usbhid                 77824  2 hid_logitech_dj,hid_logitech_hidpp
+polyval_clmulni        12288  0
+hid                   180224  4 usbhid,hid_generic,hid_logitech_dj,hid_logitech_hidpp
+polyval_generic        12288  1 polyval_clmulni
+ghash_clmulni_intel    16384  0
+sha256_ssse3           32768  0
+r8169                 118784  0
+ahci                   49152  5
+xhci_pci               24576  0
+sha1_ssse3             32768  0
+video                  77824  1 amdgpu
+realtek                36864  1
+libahci                53248  1 ahci
+xhci_pci_renesas       20480  1 xhci_pci
+wmi                    28672  3 video,gigabyte_wmi,wmi_bmof
+aesni_intel           356352  0
+crypto_simd            16384  1 aesni_intel
+cryptd                 24576  2 crypto_simd,ghash_clmulni_intel
